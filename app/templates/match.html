@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Upload{% endblock %}
+
+{% block content %}
+
+    <div class="compare-container">
+        <h2>Compare Resume: {{ resume.filename }}</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.job_description.label }}
+
+            <div class="textarea-wrapper">
+                <button type="button" class="clear-btn" onclick="clearTextarea()">Clear</button>
+                {{ form.job_description(rows=10, cols=60) }}
+            </div>
+
+            <br>
+            {{ form.submit() }}
+        </form>
+    </div>
+
+    <script>
+        function clearTextarea() {
+            document.querySelector('textarea').value = '';
+        }
+    </script>
+{% endblock %}

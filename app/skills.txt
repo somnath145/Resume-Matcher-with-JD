@@ -1,0 +1,109 @@
+Python
+Java
+C
+C++
+C#
+JavaScript
+TypeScript
+Kotlin
+Swift
+Ruby
+HTML
+CSS
+SQL
+NoSQL
+PHP
+Shell Scripting
+R-Programming
+MATLAB
+Flask
+Django
+FastAPI
+Spring Boot
+React
+Angular
+Vue.js
+Node.js
+Express.js
+jQuery
+Bootstrap
+Tailwind CSS
+TensorFlow
+PyTorch
+Scikit-learn
+Keras
+NLTK
+spaCy
+OpenCV
+NumPy
+Pandas
+Matplotlib
+Seaborn
+Plotly
+BeautifulSoup
+Selenium
+Transformers
+LangChain
+Machine Learning
+Deep Learning
+Natural Language Processing
+Computer Vision
+Data Analysis
+Data Visualization
+Model Evaluation
+Data Preprocessing
+Feature Engineering
+Supervised Learning
+Unsupervised Learning
+Clustering
+Classification
+Regression
+Model Deployment
+Transfer Learning
+Prompt Engineering
+LLMs
+Data Cleaning
+MySQL
+PostgreSQL
+SQLite
+MongoDB
+Firebase
+Oracle
+Redis
+Elasticsearch
+AWS
+Azure
+GCP
+Docker
+Kubernetes
+CI/CD
+GitHub Actions
+Terraform
+Ansible
+Heroku
+Netlify
+Vercel
+Git
+GitHub
+Bitbucket
+Jira
+VS Code
+PyCharm
+Postman
+Jupyter Notebook
+Colab
+Figma
+Tableau
+Power BI
+Notion
+Problem Solving
+Communication
+Teamwork
+Critical Thinking
+Agile
+Scrum
+Time Management
+Presentation Skills
+Analytical Skills
+Debugging
+Documentation

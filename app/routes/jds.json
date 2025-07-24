@@ -1,0 +1,42 @@
+[
+    {
+        "role": "Software Engineer",
+        "description": "Design, develop, test, and maintain software applications using languages like Java, Python, or C++. Experience with version control, databases, and debugging tools is essential."
+    },
+    {
+        "role": "Data Analyst",
+        "description": "Analyze large datasets using SQL, Excel, and Python. Create dashboards and reports using tools like Tableau or Power BI. Strong statistical and analytical skills required."
+    },
+    {
+        "role": "Machine Learning Engineer",
+        "description": "Build and deploy machine learning models using Python, scikit-learn, TensorFlow, or PyTorch. Familiarity with data preprocessing, model evaluation, and cloud ML deployment is preferred."
+    },
+    {
+        "role": "Backend Developer",
+        "description": "Develop server-side logic using Node.js, Django, Flask, or Spring Boot. Experience with REST APIs, databases (SQL/NoSQL), authentication, and deployment is required."
+    },
+    {
+        "role": "Frontend Developer",
+        "description": "Build responsive user interfaces using HTML, CSS, JavaScript, and frontend frameworks like React or Angular. Understanding of design principles and REST API integration is important."
+    },
+    {
+        "role": "DevOps Engineer",
+        "description": "Manage CI/CD pipelines, infrastructure automation, and cloud deployments using tools like Docker, Kubernetes, Jenkins, and AWS. Knowledge of system monitoring and scripting is essential."
+    },
+    {
+        "role": "Full Stack Developer",
+        "description": "Work on both frontend and backend development using technologies like React, Node.js, Express, and MongoDB. Experience in REST APIs, Git, and deployment is crucial."
+    },
+    {
+        "role": "Data Scientist",
+        "description": "Perform exploratory data analysis, build predictive models, and communicate insights using Python, R, SQL, and data visualization tools. Proficiency in statistics and ML is necessary."
+    },
+    {
+        "role": "Cloud Engineer",
+        "description": "Design and manage cloud infrastructure on AWS, Azure, or GCP. Experience with virtualization, networking, cloud security, and automation tools like Terraform is required."
+    },
+    {
+        "role": "AI Engineer",
+        "description": "Develop intelligent systems using NLP, computer vision, and deep learning. Work with Python, TensorFlow, Hugging Face, and large-scale datasets. Research and deploy AI models."
+    }
+]

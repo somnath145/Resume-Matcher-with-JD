@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<div class="percentage-container">
+    <h2>Resume Matching score</h2>
+    <div class="circular-progress" id="progressCircle" data-percent="{{ match_percentage }}">
+        <div class="percentage-text">{{ match_percentage }}%</div>
+    </div>
+    <div class="score">
+        {% if match_percentage >=80 %}
+            <div class="high">
+                <h3 >High</h3>
+                <p >Excellent score !! You are ready for the job-role.</p>
+            </div>
+        {% elif match_percentage >=60 %}
+            <div class="average">
+                <h3 class="average">Average</h3>
+                <p class="average">Medium score !! should add some skills, then you good to go.</p>
+            </div>
+        {% else %}
+            <div class="low">
+                <h3 class="low">Low</h3>
+                <p class="low">Bad score !! explore more skills and technology based on the suggestions.</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="skills-container">
+    <div class="matched_skills">
+        <h3>Skill Matched: </h3>
+        <p>matched skills with job-description and your resume</p>
+        <p></p>
+        <ul>
+            {% for i in match_skills %}
+            <li>{{i}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="not_matched_skills">
+        <h3>Skill Required: </h3>
+        <p>you should add in your cv to enhance the accuracy score</p>
+        <ul>
+            {% for i in not_match_skills %}
+            <li>{{i}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="ATS-container">
+    <div class="ATS-report">
+        <h3>ATS Compatibility Report : </h3>
+        <ul>
+            <li><strong>Has Image : </strong>{{ats_report["Has Image"]}}</li><br>
+            <li><strong>Section Found : </strong>
+                <ul>
+                    {% for i in  ats_report["Section Found"] %}
+                        <li>{{i}}</li>
+                    {%  endfor %}
+                </ul>
+            </li><br>
+            <li><strong>Used Fonts : </strong>
+                <ul>
+                    {% for i in  ats_report["Font"] %}
+                        <li>{{i}}</li>
+                    {%  endfor %}
+                </ul>
+            </li><br>
+            <li><strong>ATS Friendly : </strong>{{ats_report["ATS Friendly"]}}</li><br>
+        </ul>
+    </div>
+    <div class="ATS-suggetion">
+        <h3>ATS suggestions : </h3>
+        <ul>
+            {% if ats_report["Has Image"] == 'Yes' %}
+            <li><strong>Remove Image : </strong>Please remove the images from the resume for better ATS score</li><br>
+            {% endif %}
+            {% if (ats_report["Section Found"] | length) < 5  %}
+            <li><strong>Add Sections : </strong>Add informative sections like Education, Skills, Work Experience(if any), Projects.</li><br>
+            {% endif %}
+            <li><strong>Font suggestions : </strong>You should use a simple and professional font, such as Arial or Times New Roman, and avoid fancy or decorative fonts that might not be recognized by the ATS.</li><br>
+            <li><strong>Add keywords : </strong>Add the word given in the skill required section in your resume and pass the ATS score.</li><br>
+        </ul>
+    </div>
+</div>
+
+<div class="main-video-suggestions">
+<div class="video-suggestions">
+    <h3>Recommended YouTube Videos for Learning:</h3>
+<ul>
+  {% for skill, link in video_suggestion.items() %}
+    <li class="video-list"><a href="{{ link }}" target="_blank">{{ skill }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</div>
+
+<div class="reccomendation">
+    <h3>Recommend Job Roles for you</h3>
+    <p>This are the recommended job roles based on the skills you have.</p>
+    <div class="recommendation-box">
+    <ul>
+        {% for role in recommendation %}
+        {% if recommendation[role] > 50 %}
+        <div class="rec-elem">
+            <li>{{role}}</li>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    </div>
+</div>
+
+<script>
+    const progressCircle = document.getElementById("progressCircle");
+    const matchPercentage = parseFloat(progressCircle.dataset.percent);
+    if(matchPercentage>=80){
+        progressCircle.style.background = `conic-gradient(#4CAF50 ${matchPercentage}%, #ddd ${matchPercentage}%)`;
+    }
+    else if (matchPercentage>=60) {
+        progressCircle.style.background = `conic-gradient(rgb(198, 100, 19) ${matchPercentage}%, #ddd ${matchPercentage}%)`;
+    } else {
+        progressCircle.style.background = `conic-gradient(red ${matchPercentage}%, #ddd ${matchPercentage}%)`;
+    }
+    
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+

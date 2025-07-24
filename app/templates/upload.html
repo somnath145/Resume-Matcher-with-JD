@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Upload{% endblock %}
+
+{% block content %}
+<div id="upload-section">
+    <h2>Upload Your Resume</h2>
+
+    <form id="resume-upload-form" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.resume.label(class="file-label") }}
+            {{ form.resume(class="file-input") }}
+        </div>
+        {{ form.submit(class="submit-button") }}
+    </form>
+</div>
+
+<hr id="section-divider">
+
+<div id="previous-resumes-section">
+    <h3>Your Previous Resumes:</h3>
+    <ul id="resume-list">
+        {% for resume in resumes %}
+            <li class="resume-item">
+                <span class="resume-filename">{{ resume.filename }}</span>
+                <form class="analyze-form" method="POST" action="{{ url_for('task.analyze_resume', resume_id=resume.id) }}">
+                    <button type="submit" class="analyze-button">Analyze This</button>
+                </form>
+                <form class="delete-form" method="POST" action="{{ url_for('task.delete_resume', resume_id=resume.id) }}">
+                    <button type="submit" class="delete-button">Delete Resume</button>
+                </form>
+            </li>
+        {% else %}
+            <p id="no-resumes-message">No resumes uploaded yet.</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

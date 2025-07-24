@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} App {% endblock %} </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Resume Matcher</h1>
+            <nav>
+                <a href="{{ url_for('task.upload_resume') }}">Home</a>
+                {% if 'username' in session %}
+                    <a href="{{ url_for('auth.logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('auth.login') }}">Login</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <main class="containere">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h2>Unlock Your Career Potential with AI-Powered Resume Matching</h2>
+            <p>Effortlessly align your resume with job descriptions and stand out from the crowd. Get instant feedback and boost your chances of landing your dream job.</p>
+            <a href="{{ url_for('task.upload_resume') }}" class="btn">Get Started Now</a>
+        </section>
+
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="icon"><i class="fas fa-upload"></i></div>
+                    <h3>1. Upload Your Resume</h3>
+                    <p>Simply upload your resume in PDF format. Our system will quickly process your document.</p>
+                </div>
+                <div class="step-item">
+                    <div class="icon"><i class="fas fa-paste"></i></div>
+                    <h3>2. Paste Job Description</h3>
+                    <p>Copy and paste the job description you're applying for. Our AI will analyze the key requirements.</p>
+                </div>
+                <div class="step-item">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>3. Get Instant Match Score</h3>
+                    <p>Receive an immediate compatibility score and detailed insights on how well your resume matches the job.</p>
+                </div>
+                <div class="step-item">
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>4. Optimize & Improve</h3>
+                    <p>Get personalized suggestions to optimize your resume, highlight relevant skills, and increase your chances.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-robot"></i></div>
+                    <div class="content">
+                        <h3>AI-Driven Analysis</h3>
+                        <p>Leverage advanced artificial intelligence to accurately identify keywords and skills from job descriptions.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-search"></i></div>
+                    <div class="content">
+                        <h3>Keyword Optimization</h3>
+                        <p>Discover missing keywords and phrases to make your resume more appealing to Applicant Tracking Systems (ATS).</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-comments"></i></div>
+                    <div class="content">
+                        <h3>Personalized Feedback</h3>
+                        <p>Receive actionable advice and tailored recommendations to enhance your resume's relevance and impact.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-user-check"></i></div>
+                    <div class="content">
+                        <h3>User-Friendly Interface</h3>
+                        <p>Our intuitive design makes it easy for anyone to use, regardless of technical expertise.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="content">
+                        <h3>Data Privacy & Security</h3>
+                        <p>Your data is handled with the utmost care and security, ensuring your information remains confidential.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="content">
+                        <h3>Fast & Efficient</h3>
+                        <p>Get results in seconds, allowing you to quickly iterate and refine your resume for multiple applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My AI-Based-Resume-Matcher-App</p>
+        </div>
+    </footer>
+
+</body>
+</html>
